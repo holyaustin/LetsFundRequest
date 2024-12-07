@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import packageInfo from "../../package.json";
+import packageInfo from "@/package.json";
 import Link from "next/link";
 
 interface VersionDisplayProps {

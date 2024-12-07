@@ -1,6 +1,4 @@
 import { CheckoutStepper } from "@/components/CheckoutStepper";
-import Banner from '@/components/Banner'
-
 
 export default function CheckoutPage() {
   return (
