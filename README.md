@@ -1,5 +1,8 @@
-# LetsFund: Web3 Social / Consumer DApp on Linea
+# LetsFund: Web3 Donation / Charity DApp on Sepolia Testnet with Request
 
+A platform that enables non-profits to receive donations in various cryptocurrencies via Request Network. It offers transparency in fund management and simplifies the donation process for supporters, encouraging more contributions to charitable causes.
+
+## Introduction 
 "letsfund" is a groundbreaking Web3 charity fundraising platform designed to revolutionize the way charitable organizations raise funds and engage with their communities. Deployed on the Linea Sepolia Blockchain, letsfund combines the transparency and security of blockchain technology with an intuitive user experience, allowing both donors and beneficiaries to experience a seamless and trustworthy process. By leveraging decentralized technologies, letsfund aims to minimize overhead costs, enhance donor engagement, and ensure that contributions have a direct and measurable impact.
 
 ![Charity Marketplace](./screenshots/letsfund2.png)
@@ -83,3 +86,8 @@ https://sepolia.lineascan.build/address/0x342b41e0f99fb95f1667bc634ca0872709e6d4
 - 🎅 [TypeScript](https://www.typescriptlang.org/)
 - 🐻 [Solidity](https://soliditylang.org/)
 - 👀 [EthersJs](https://docs.ethers.io/v5/)
+
+
+
+
+
