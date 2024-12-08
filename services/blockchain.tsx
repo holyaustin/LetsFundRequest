@@ -24,7 +24,7 @@ const getEthereumContracts = async () => {
 
     return contracts
   } else {
-    const provider = new ethers.JsonRpcProvider(`https://linea-sepolia.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_API_KEY}`)
+    const provider = new ethers.JsonRpcProvider(`https://sepolia.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_API_KEY}`)
     const wallet = ethers.Wallet.createRandom()
     const signer = wallet.connect(provider)
     const contracts = new ethers.Contract(address.dappFundContract, dappFundAbi.abi, signer)

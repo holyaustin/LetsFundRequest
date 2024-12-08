@@ -13,20 +13,22 @@ import {
   coinbaseWallet,
   rainbowWallet,
 } from '@rainbow-me/rainbowkit/wallets'
-import { mainnet, linea, hardhat } from 'wagmi/chains'
+import { mainnet, sepolia, hardhat } from 'wagmi/chains'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { infuraProvider } from 'wagmi/providers/infura'
 import { publicProvider } from 'wagmi/providers/public'
 import { Session } from 'next-auth'
 import { SessionProvider } from 'next-auth/react'
 
-const publicProviderRPC = `https://linea-sepolia.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_API_KEY}`
+const publicProviderRPC = `https://sepolia.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_API_KEY}`
 
-const lineaSepolia: Chain = {
-  id: 59_141,
-  name: 'Linea Sepolia',
-  network: 'linea',
-  //iconUrl: 'https://sepolia.lineascan.build/assets/linea/images/svg/logos/logo-light.svg?v=24.11.2.0',
+// https://sepolia.infura.io/v3/a59d073b9ece420c85606c8a39558c78
+
+
+const Sepolia: Chain = {
+  id: 11_155_111,
+  name: 'Sepolia',
+  network: 'Sepolia',
   iconBackground: '#000000',
   nativeCurrency: {
     decimals: 18,
@@ -34,18 +36,18 @@ const lineaSepolia: Chain = {
     symbol: 'ETH',
   },
   rpcUrls: {
-    public: { http: ['https://rpc.sepolia.linea.build'] },
+    public: { http: [publicProviderRPC]  },
     default: { http: [publicProviderRPC] },
   },
   blockExplorers: {
-    default: { name: 'Aia Block Explorer', url: 'https://sepolia.lineascan.build/' },
-    etherscan: { name: 'Aia Block Explorer', url: 'https://explorer.sepolia.linea.build/' },
+    default: { name: 'Sepolia Block Explorer', url: 'https://sepolia.etherscan.io/' },
+    etherscan: { name: 'Sepolia Block Explorer', url: 'https://sepolia.etherscan.io/' },
   },
   testnet: true,
 } 
 
 const { chains, publicClient } = configureChains(
-  [lineaSepolia, linea, hardhat],
+  [Sepolia, sepolia, hardhat],
   [alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_ID as string }), publicProvider()]
 )
 
