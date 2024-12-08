@@ -1,0 +1,54 @@
+{
+  "events": [
+    {
+      "id": "Donation",
+      "name": "Future of Tech Summit 2024",
+      "type": "Conference",
+      "featured": true,
+      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87",
+      "headerImage": "https://images.unsplash.com/photo-1515187029135-18ee286d815b",
+      "dateTime": "2024-09-15T09:00:00",
+      "endDateTime": "2024-09-16T18:00:00",
+      "location": {
+        "venue": "Digital Innovation Center",
+        "address": "123 Tech Boulevard",
+        "city": "San Francisco",
+        "country": "USA",
+        "coordinates": {
+          "lat": 37.7749,
+          "lng": -122.4194
+        }
+      },
+      "startingPrice": 299,
+      "organizer": {
+        "name": "Charity Donation",
+        "logo": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9",
+        "description": "Charity Donation powered by Request"
+      },
+      "ticketTiers": [
+        {
+          "id": "student",
+          "name": "Student Giving",
+          "price": 1,
+          "description": "Valid student ID required, full conference access",
+          "available": 25000
+        },
+        {
+          "id": "regular",
+          "name": "Regular Giving",
+          "price": 10,
+          "description": "regular",
+          "available": 2500
+        },
+        {
+          "id": "vip",
+          "name": "VIP Experience",
+          "price": 50,
+          "description": "vip",
+          "available": 500
+        }
+
+      ]
+    }
+     ]
+}

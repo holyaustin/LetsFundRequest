@@ -5,19 +5,38 @@ import { CharityStruct, SupportStruct } from '@/utils/type.dt'
 import { useDispatch } from 'react-redux'
 import { globalActions } from '@/store/globalSlices'
 import { useAccount } from 'wagmi'
+import Link from "next/link";
+import { useState, useEffect } from "react";
 // @ts-ignore
 import ShareLink from 'react-twitter-share-link'
 
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import { CalendarIcon, MapPinIcon, Clock } from "lucide-react";
+import { format } from "date-fns";
+import { TicketSelector } from "@/components/TicketSelector";
+import eventsData from "@/const/data.json";
 interface ComponentProp {
   charity: CharityStruct
   supports: SupportStruct[]
   owner: string
 }
 
+function getEventById(id: string) {
+
+  const event = eventsData.events.find((event) => event.id === id);
+  if (!event) return null;
+  return event;
+}
+
+
 const Payment: React.FC<ComponentProp> = ({ charity, supports, owner }) => {
   const { address } = useAccount()
   const dispatch = useDispatch()
   const { setSupportModal, setDonorModal, setBanModal } = globalActions
+  const [total, setTotal] = useState(0);
+
+  const event = getEventById("Donation");
 
   return (
     <div
@@ -44,7 +63,7 @@ const Payment: React.FC<ComponentProp> = ({ charity, supports, owner }) => {
       </div>
 
       <div className="flex flex-col space-y-2 font-semibold"> 
-
+{/**
       <ShareLink link={'https://letsfundcharity.vercel.app/donations/' + charity.id} 
               text=" 🌟 Imagine a world where every child has access to education! You can help make this a reality. Even a small contribution to our charity project can ignite dreams and change lives. Join us in creating a brighter future! ✨" 
               hashtags="Linea MakeADifference">
@@ -57,24 +76,31 @@ const Payment: React.FC<ComponentProp> = ({ charity, supports, owner }) => {
               > 
 
                   <a href={link} target="_blank" rel="noreferrer">Share on Twitter</a></button>
-                  )}
-            
-                
-
-      
+                  )}      
         </ShareLink>
+        */}
 
+
+          {/* Ticket Selection Sidebar */}
+          <div className="lg:col-span-1">
+            <TicketSelector event={event} />
+          </div>
 
         
         {!charity.banned ? (
+          <div>
+            
           <button
             className="bg-amber-500 py-3 px-20 rounded-xl
-          transition-all duration-300 ease-in-out
+          transition-all duration-300 ease-in-out w-full
           hover:bg-amber-400"
             onClick={() => dispatch(setDonorModal('scale-100'))}
           >
-            Donate now
+            Donate ETH
           </button>
+
+</div>
+
         ) : (
           <button
             className="border border-amber-500 py-3 px-20 rounded-xl

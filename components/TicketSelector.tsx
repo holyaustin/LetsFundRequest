@@ -68,19 +68,19 @@ export function TicketSelector({ event }: TicketSelectorProps) {
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm sticky top-4">
-      <h2 className="text-2xl font-semibold mb-6">Select Tickets</h2>
+    <div className="bg-white rounded-xl px-2 shadow-sm sticky">
+      <h2 className="text-xl font-semibold mb-2">Select Donation</h2>
 
-      <div className="space-y-6">
+      <div className="space-y-1">
         {event.ticketTiers.map((tier) => (
           <div
             key={tier.id}
-            className="border-b border-gray-100 pb-6 last:border-0"
+            className="border-b border-gray-100 pb-2 last:border-0"
           >
             <div className="flex justify-between items-start mb-2">
               <div>
                 <h3 className="font-semibold">{tier.name}</h3>
-                <p className="text-lg font-medium text-[#099C77]">
+                <p className="text-lg font-extrabold text-[#099C77]">
                   ${tier.price}
                 </p>
               </div>
@@ -111,12 +111,12 @@ export function TicketSelector({ event }: TicketSelectorProps) {
                 </button>
               </div>
             </div>
-            <p className="text-sm text-gray-600">{tier.description}</p>
+           {/** <p className="text-sm text-gray-600">{tier.description}</p> */}
           </div>
         ))}
       </div>
 
-      <div className="mt-6 pt-6 border-t border-gray-100">
+      <div className="mt-1 pt-2 border-t border-gray-100">
         <div className="flex justify-between items-center mb-6">
           <span className="font-semibold">Total:</span>
           <span className="text-xl font-bold">
@@ -126,7 +126,7 @@ export function TicketSelector({ event }: TicketSelectorProps) {
 
         <Link href="/checkout">
           <button
-            className="w-full bg-[#099C77] text-white py-3 rounded-lg font-medium hover:bg-[#078665] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[#099C77] text-white py-3 rounded-lg font-bold hover:bg-[#078665] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={total === 0}
             aria-label={
               total === 0
@@ -134,7 +134,7 @@ export function TicketSelector({ event }: TicketSelectorProps) {
                 : "Proceed to checkout"
             }
           >
-            Checkout
+            Donate with Request
           </button>
         </Link>
       </div>
